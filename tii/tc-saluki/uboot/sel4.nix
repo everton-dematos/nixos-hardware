@@ -6,8 +6,8 @@ stdenv.mkDerivation rec {
 
   src = fetchFromGitHub {
     owner = "tiiuae";
-    repo = "optee_manifest";
-    rev = "83f8c86a6aa0488f1feb340ffa9fefd0479cd457";
+    repo = "optee_seL4";
+    rev = "platsec_dev";
     sha256 = "";
   };
 
@@ -19,6 +19,9 @@ stdenv.mkDerivation rec {
 
   buildPhase = ''
     runHook preBuild
+
+    repo init -u git@github.com:tiiuae/optee_manifest -m seL4_TEE.xml
+    repo sync
 
     cmake -G Ninja ../projects/sel4_teeos
 
