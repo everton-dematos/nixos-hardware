@@ -4,7 +4,8 @@
 
 with pkgs; let
   payload-generator = pkgs.callPackage ./hss-payload-generator.nix {};
-  sel4 = pkgs.callPackage ./sel4.nix {};
+  #sel4 = pkgs.callPackage ./sel4.nix {};
+  sel4_local = /home/ssrclab1/Documents/seL4/RISC-V/seL4_TEE_platsecdev_OS/build/images;
   payload_config = ./uboot.yaml;
 in
 buildUBoot rec {
@@ -30,7 +31,7 @@ buildUBoot rec {
   enableParallelBuilding = true;
   extraMeta.platforms = ["riscv64-linux"];
   postBuild = ''
-        cp ${sel4}/teeos_root-image-riscv-polarfire .
+        cp ${sel4_local}/teeos_root-image-riscv-polarfire .
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
   filesToInstall = [ "payload.bin" ];
