@@ -5,7 +5,7 @@
 with pkgs; let
   payload-generator = pkgs.callPackage ./hss-payload-generator.nix {};
   #sel4 = pkgs.callPackage ./sel4.nix {};
-  sel4_local = /home/ssrclab1/Documents/seL4/RISC-V/seL4_TEE_platsecdev_OS/build/gen_hss_payload;
+  sel4_local = /home/ssrclab1/Documents/seL4/RISC-V/seL4_TEE_platsecdev_AMP/build/gen_hss_payload;
   payload_config = ./uboot.yaml;
 in
 buildUBoot rec {
