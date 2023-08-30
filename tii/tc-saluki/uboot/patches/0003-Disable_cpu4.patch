@@ -1,0 +1,28 @@
+From b3f5206b542d4a2b1dd2913437ad9ba1c529f993 Mon Sep 17 00:00:00 2001
+From: everton-dematos <everton@ssrc.tii.ae>
+Date: Wed, 30 Aug 2023 14:01:03 +0400
+Subject: [PATCH] 0003-Disable_cpu4
+
+Signed-off-by: everton-dematos <everton@ssrc.tii.ae>
+---
+ arch/riscv/dts/microchip-mpfs-icicle-kit.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/riscv/dts/microchip-mpfs-icicle-kit.dts b/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
+index 09722a02a4..9bc2a7ed3c 100644
+--- a/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
++++ b/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
+@@ -136,6 +136,10 @@
+ 	};
+ };
+ 
++&cpu4 {
++	status = "disabled"; // in use by context b
++};
++
+ &refclk {
+ 	clock-frequency = <125000000>;
+ };
+-- 
+2.34.1
+

@@ -26,6 +26,7 @@ buildUBoot rec {
   patches = [
     ./patches/0001-Boot-environment-for-Microchip-Iciclle-Kit.patch
     ./patches/0002-Riscv-Fix-build-against-binutils-2.38.patch
+    ./patches/0003-Disable_cpu4.patch
   ];
   defconfig = "${targetBoard}_defconfig";
   enableParallelBuilding = true;
