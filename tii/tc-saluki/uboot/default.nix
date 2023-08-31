@@ -35,8 +35,8 @@ buildUBoot rec {
   enableParallelBuilding = true;
   extraMeta.platforms = ["riscv64-linux"];
   postBuild = ''
-        cp ${sel4_local}/payload_seL4.bin .
+        cp ${sel4_local}/sel4payload_OS .
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
-  filesToInstall = [ "payload_seL4.bin" ];
+  filesToInstall = [ "payload.bin" ];
 }
