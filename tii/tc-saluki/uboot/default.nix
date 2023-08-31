@@ -28,6 +28,7 @@ buildUBoot rec {
     ./patches/0002-Riscv-Fix-build-against-binutils-2.38.patch
     ./patches/0003-Disable_cpu4.patch
     ./patches/0004-Memory_addr.patch
+    ./patches/0005-Memory_SMODE.patch
   ];
   defconfig = "${targetBoard}_defconfig";
   enableParallelBuilding = true;

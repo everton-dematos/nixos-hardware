@@ -1,0 +1,26 @@
+From 7a36d76bed3399c40548c58a03c3a1767b039661 Mon Sep 17 00:00:00 2001
+From: everton-dematos <everton@ssrc.tii.ae>
+Date: Thu, 31 Aug 2023 15:18:46 +0400
+Subject: [PATCH] 0005-Memory_SMODE
+
+Signed-off-by: everton-dematos <everton@ssrc.tii.ae>
+---
+ board/microchip/mpfs_icicle/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/board/microchip/mpfs_icicle/Kconfig b/board/microchip/mpfs_icicle/Kconfig
+index bd4400a793..2164e50693 100644
+--- a/board/microchip/mpfs_icicle/Kconfig
++++ b/board/microchip/mpfs_icicle/Kconfig
+@@ -14,7 +14,7 @@ config SYS_CONFIG_NAME
+ 
+ config SYS_TEXT_BASE
+ 	default 0x80000000 if !RISCV_SMODE
+-	default 0x80200000 if RISCV_SMODE
++	default 0x89000000 if RISCV_SMODE
+ 
+ config BOARD_SPECIFIC_OPTIONS # dummy
+ 	def_bool y
+-- 
+2.34.1
+
