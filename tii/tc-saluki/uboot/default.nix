@@ -29,6 +29,7 @@ buildUBoot rec {
     ./patches/0003-Disable_cpu4.patch
     ./patches/0004-Memory_addr.patch
     ./patches/0005-Memory_SMODE.patch
+    ./patches/0006-Memory_addr_defconfig.patch
   ];
   defconfig = "${targetBoard}_defconfig";
   enableParallelBuilding = true;
