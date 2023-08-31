@@ -1,0 +1,34 @@
+From 63d9a03cdd3140607a37f368724aa687637d321e Mon Sep 17 00:00:00 2001
+From: everton-dematos <everton@ssrc.tii.ae>
+Date: Thu, 31 Aug 2023 12:36:19 +0400
+Subject: [PATCH] 0004-Memory_addr
+
+Signed-off-by: everton-dematos <everton@ssrc.tii.ae>
+---
+ arch/riscv/dts/microchip-mpfs-icicle-kit.dts | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/arch/riscv/dts/microchip-mpfs-icicle-kit.dts b/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
+index 9bc2a7ed3c..3c1fa1826e 100644
+--- a/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
++++ b/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
+@@ -30,11 +30,11 @@
+ 		timebase-frequency = <RTCCLK_FREQ>;
+ 	};
+ 
+-	kernel: memory@80000000 {
+-		device_type = "memory";
+-		reg = <0x0 0x80000000 0x0 0x4000000>;
+-		label = "kernel";
+-	};
++    kernel: memory@89000000 {
++        device_type = "memory";
++        reg = <0x0 0x89000000 0x0 (0x8a000000 - 0x89000000)>;
++        label = "kernel";
++    };
+ 
+ 	ddr_cached_low: memory@8a000000 {
+ 		device_type = "memory";
+-- 
+2.34.1
+
