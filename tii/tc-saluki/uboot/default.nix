@@ -38,5 +38,5 @@ buildUBoot rec {
         cp ${sel4_local}/sel4payload_AMP .
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
-  filesToInstall = [ "payload.bin" ];
+  filesToInstall = [ "sel4payload_AMP" ];
 }
