@@ -35,7 +35,7 @@ buildUBoot rec {
   enableParallelBuilding = true;
   extraMeta.platforms = ["riscv64-linux"];
   postBuild = ''
-        cp ${sel4_local}/amp.elf .
+        cp ${sel4_local}/asel4payload_AMP_new .
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
   filesToInstall = [ "payload.bin" ];
