@@ -1,0 +1,48 @@
+From 8c149eef0c961ae63c21d03c7731556a4e6bf000 Mon Sep 17 00:00:00 2001
+From: everton-dematos <everton@ssrc.tii.ae>
+Date: Wed, 6 Sep 2023 14:35:07 +0400
+Subject: [PATCH] 0007-Shared_Memory
+
+Signed-off-by: everton-dematos <everton@ssrc.tii.ae>
+---
+ arch/riscv/dts/microchip-mpfs-icicle-kit-amp.dts | 6 ------
+ arch/riscv/dts/microchip-mpfs-icicle-kit.dts     | 6 ------
+ 2 files changed, 12 deletions(-)
+
+diff --git a/arch/riscv/dts/microchip-mpfs-icicle-kit-amp.dts b/arch/riscv/dts/microchip-mpfs-icicle-kit-amp.dts
+index 4bff491d44..5ddedeec60 100644
+--- a/arch/riscv/dts/microchip-mpfs-icicle-kit-amp.dts
++++ b/arch/riscv/dts/microchip-mpfs-icicle-kit-amp.dts
+@@ -90,12 +90,6 @@
+ 			dma-ranges = <0x14 0x12000000 0x14 0x12000000 0x0 0x10000000>;
+ 		};
+ 
+-		fabricbuf0ddrc: buffer@88000000 {
+-			compatible = "shared-dma-pool";
+-			reg = <0x0 0x88000000 0x0 0x2000000>;
+-			no-map;
+-		};
+-
+ 		fabricbuf1ddrnc: buffer@c8000000 {
+ 			compatible = "shared-dma-pool";
+ 			reg = <0x0 0xc8000000 0x0 0x2000000>;
+diff --git a/arch/riscv/dts/microchip-mpfs-icicle-kit.dts b/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
+index 3c1fa1826e..3039dee7c1 100644
+--- a/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
++++ b/arch/riscv/dts/microchip-mpfs-icicle-kit.dts
+@@ -89,12 +89,6 @@
+ 			dma-ranges = <0x14 0x12000000 0x14 0x12000000 0x0 0x10000000>;
+ 		};
+ 
+-		fabricbuf0ddrc: buffer@88000000 {
+-			compatible = "shared-dma-pool";
+-			reg = <0x0 0x88000000 0x0 0x2000000>;
+-			no-map;
+-		};
+-
+ 		fabricbuf1ddrnc: buffer@c8000000 {
+ 			compatible = "shared-dma-pool";
+ 			reg = <0x0 0xc8000000 0x0 0x2000000>;
+-- 
+2.34.1
+
