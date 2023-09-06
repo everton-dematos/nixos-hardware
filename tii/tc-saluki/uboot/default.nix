@@ -35,7 +35,7 @@ buildUBoot rec {
   enableParallelBuilding = true;
   extraMeta.platforms = ["riscv64-linux"];
   postBuild = ''
-        cp ${sel4_local}/sel4test-driver-image-riscv-hifive .
+        cp ${sel4_local}/sel4test-driver-image-riscv-polarfire .
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
   filesToInstall = [ "payload.bin" ];
