@@ -30,12 +30,13 @@ buildUBoot rec {
     ./patches/0004-Memory_addr.patch
     ./patches/0005-Memory_SMODE.patch
     ./patches/0006-Memory_addr_defconfig.patch
+    ./patches/0007-Shared_Memory.patch
   ];
   defconfig = "${targetBoard}_defconfig";
   enableParallelBuilding = true;
   extraMeta.platforms = ["riscv64-linux"];
   postBuild = ''
-        cp ${sel4_local}/sel4test-driver-image-riscv-polarfire .
+        cp ${sel4_local}/sel4test_AMP_Oct10 .
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
   filesToInstall = [ "payload.bin" ];
