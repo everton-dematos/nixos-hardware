@@ -4,7 +4,7 @@
 
 # First, we can optionally set a name for our image, otherwise one will be created
 # dynamically
-set-name: 'PolarFire-SoC-HSS::U-Boot-seL4TEE-saluki - seL4-uImage-bin'
+set-name: 'PolarFire-SoC-HSS::U-Boot-seL4TEE-saluki - seL4-uImage-elf'
 
 #
 # Next, we'll define the entry point addresses for each hart, as follows:
@@ -34,4 +34,4 @@ hart-entry-points: {u54_1: '0x89000000', u54_2: '0x89000000', u54_3: '0x89000000
 #
 payloads:
   u-boot.bin: {exec-addr: '0x89000000', owner-hart: u54_1, secondary-hart: u54_2, secondary-hart: u54_3, priv-mode: prv_s}
-  seL4-uImage-bin: {exec-addr: '0x88000000', owner-hart: u54_4, priv-mode: prv_s}
+  seL4-uImage-elf: {exec-addr: '0x88000000', owner-hart: u54_4, priv-mode: prv_s}
