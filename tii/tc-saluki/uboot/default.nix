@@ -39,8 +39,6 @@ buildUBoot rec {
         cp ${sel4_local}/seL4.bin .
         cp ${sel4_local}/mpfs-rpmsg-remote.elf .
         cp ${sel4_local}/rootfs.tar .
-        cp ${sel4_local}/u-boot.bin .
-        cp ${sel4_local}/boot.scr .
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
   filesToInstall = [ "payload.bin" ];
