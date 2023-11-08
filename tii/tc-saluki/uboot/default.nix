@@ -36,7 +36,7 @@ buildUBoot rec {
   enableParallelBuilding = true;
   extraMeta.platforms = ["riscv64-linux"];
   postBuild = ''
-        cp ${sel4_local}/hello_microkit.elf .
+        cp ${sel4_local}/seL4_AMP.bin .
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
   filesToInstall = [ "payload.bin" ];
