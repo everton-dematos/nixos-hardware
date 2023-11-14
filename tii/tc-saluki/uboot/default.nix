@@ -5,7 +5,7 @@
 with pkgs; let
   payload-generator = pkgs.callPackage ./hss-payload-generator.nix {};
   #sel4 = pkgs.callPackage ./sel4.nix {};
-  sel4_local = /home/ssrclab1/Documents/seL4/RISC-V/img_bckp;
+  sel4_local = /home/ssrclab1/Documents/seL4/RISC-V/img_bckp/microkit;
   payload_config = ./uboot.yaml;
 in
 buildUBoot rec {
