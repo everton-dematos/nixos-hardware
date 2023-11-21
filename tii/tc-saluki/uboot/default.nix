@@ -38,7 +38,9 @@ buildUBoot rec {
   postBuild = ''
         cp ${sel4_local}/kernel.elf .
         cp ${sel4_local}/kernel.dts .
-        cp ${sel4_local}/kernel.dtb .        
+        cp ${sel4_local}/kernel.dtb . 
+        cp ${sel4_local}/loader.elf .
+        cp ${sel4_local}/monitor.elf .       
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
   filesToInstall = [ "payload.bin" ];
