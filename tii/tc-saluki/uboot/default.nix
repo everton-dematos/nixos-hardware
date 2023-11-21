@@ -5,7 +5,7 @@
 with pkgs; let
   payload-generator = pkgs.callPackage ./hss-payload-generator.nix {};
   #sel4 = pkgs.callPackage ./sel4.nix {};
-  sel4_local = /home/ssrclab1/Documents/seL4/RISC-V/img_bckp/microkit;
+  sel4_local = /home/ssrclab1/Documents/seL4/RISC-V/img_bckp/tmp_build;
   payload_config = ./uboot.yaml;
 in
 buildUBoot rec {
@@ -36,10 +36,7 @@ buildUBoot rec {
   enableParallelBuilding = true;
   extraMeta.platforms = ["riscv64-linux"];
   postBuild = ''
-        cp ${sel4_local}/loader.elf .
-        cp ${sel4_local}/kernel.elf .
-        cp ${sel4_local}/kernel.dts .
-        cp ${sel4_local}/kernel.dtb .        
+        cp ${sel4_local}/hello.elf .  
         ${payload-generator}/hss-payload-generator -c ${payload_config} payload.bin
         '';
   filesToInstall = [ "payload.bin" ];
